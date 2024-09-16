@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 min-h-screen flex items-center justify-center p-4">
+
+  <!-- Edit User Form -->
+  <div class="bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold text-white text-center mb-6">Edit User</h1>
+    
+    <form action="/edit/<%= user._id %>" method="POST" class="space-y-4">
+      <div>
+        <label for="username" class="block text-sm font-medium text-zinc-400">Username</label>
+        <input type="text" id="username" name="name" value="<%= user.name %>" class="mt-1 block w-full p-3 rounded-md bg-zinc-700 border-zinc-600 text-white focus:ring-2 focus:ring-zinc-400 focus:border-transparent">
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-zinc-400">Email</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>" class="mt-1 block w-full p-3 rounded-md bg-zinc-700 border-zinc-600 text-white focus:ring-2 focus:ring-zinc-400 focus:border-transparent">
+      </div>
+
+      <div>
+        <label for="imageURL" class="block text-sm font-medium text-zinc-400">Image URL</label>
+        <input type="text" id="imageURL" name="image" value="<%= user.image %>" class="mt-1 block w-full p-3 rounded-md bg-zinc-700 border-zinc-600 text-white focus:ring-2 focus:ring-zinc-400 focus:border-transparent">
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="w-full py-3 rounded-md bg-zinc-600 text-white hover:bg-zinc-500 font-semibold">Update</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
